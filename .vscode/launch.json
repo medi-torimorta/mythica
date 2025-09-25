@@ -12,11 +12,11 @@
       "projectName": "mythica",
       "mainClass": "net.neoforged.devlaunch.Main",
       "args": [
-        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\clientRunProgramArgs.txt"
+        "@D:\\Data\\current\\mods\\mythica_mcmod\\mythica\\build\\moddev\\clientRunProgramArgs.txt"
       ],
       "vmArgs": [
-        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\clientRunVmArgs.txt",
-        "-Dfml.modFolders\u003dmythica%%D:\\projects\\mythica_mcmod\\mythica\\bin\\main"
+        "@D:\\Data\\current\\mods\\mythica_mcmod\\mythica\\build\\moddev\\clientRunVmArgs.txt",
+        "-Dfml.modFolders\u003dmythica%%D:\\Data\\current\\mods\\mythica_mcmod\\mythica\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -34,11 +34,11 @@
       "projectName": "mythica",
       "mainClass": "net.neoforged.devlaunch.Main",
       "args": [
-        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\dataRunProgramArgs.txt"
+        "@D:\\Data\\current\\mods\\mythica_mcmod\\mythica\\build\\moddev\\dataRunProgramArgs.txt"
       ],
       "vmArgs": [
-        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\dataRunVmArgs.txt",
-        "-Dfml.modFolders\u003dmythica%%D:\\projects\\mythica_mcmod\\mythica\\bin\\main"
+        "@D:\\Data\\current\\mods\\mythica_mcmod\\mythica\\build\\moddev\\dataRunVmArgs.txt",
+        "-Dfml.modFolders\u003dmythica%%D:\\Data\\current\\mods\\mythica_mcmod\\mythica\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -56,11 +56,11 @@
       "projectName": "mythica",
       "mainClass": "net.neoforged.devlaunch.Main",
       "args": [
-        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\gameTestServerRunProgramArgs.txt"
+        "@D:\\Data\\current\\mods\\mythica_mcmod\\mythica\\build\\moddev\\gameTestServerRunProgramArgs.txt"
       ],
       "vmArgs": [
-        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\gameTestServerRunVmArgs.txt",
-        "-Dfml.modFolders\u003dmythica%%D:\\projects\\mythica_mcmod\\mythica\\bin\\main"
+        "@D:\\Data\\current\\mods\\mythica_mcmod\\mythica\\build\\moddev\\gameTestServerRunVmArgs.txt",
+        "-Dfml.modFolders\u003dmythica%%D:\\Data\\current\\mods\\mythica_mcmod\\mythica\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -78,11 +78,11 @@
       "projectName": "mythica",
       "mainClass": "net.neoforged.devlaunch.Main",
       "args": [
-        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\serverRunProgramArgs.txt"
+        "@D:\\Data\\current\\mods\\mythica_mcmod\\mythica\\build\\moddev\\serverRunProgramArgs.txt"
       ],
       "vmArgs": [
-        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\serverRunVmArgs.txt",
-        "-Dfml.modFolders\u003dmythica%%D:\\projects\\mythica_mcmod\\mythica\\bin\\main"
+        "@D:\\Data\\current\\mods\\mythica_mcmod\\mythica\\build\\moddev\\serverRunVmArgs.txt",
+        "-Dfml.modFolders\u003dmythica%%D:\\Data\\current\\mods\\mythica_mcmod\\mythica\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
