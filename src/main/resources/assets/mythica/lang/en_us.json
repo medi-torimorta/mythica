@@ -1,0 +1,13 @@
+{
+  "itemGroup.mythica": "Example Mod Tab",
+  "block.mythica.example_block": "Example Block",
+  "item.mythica.example_item": "Example Item",
+
+  "mythica.configuration.title": "Mythica Configs",
+  "mythica.configuration.section.mythica.common.toml": "Mythica Configs",
+  "mythica.configuration.section.mythica.common.toml.title": "Mythica Configs",
+  "mythica.configuration.items": "Item List",
+  "mythica.configuration.logDirtBlock": "Log Dirt Block",
+  "mythica.configuration.magicNumberIntroduction": "Magic Number Text",
+  "mythica.configuration.magicNumber": "Magic Number"
+}

@@ -1,0 +1,93 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Client",
+      "presentation": {
+        "group": "Mod Development - mythica",
+        "order": 0
+      },
+      "projectName": "mythica",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\clientRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\clientRunVmArgs.txt",
+        "-Dfml.modFolders\u003dmythica%%D:\\projects\\mythica_mcmod\\mythica\\bin\\main"
+      ],
+      "cwd": "${workspaceFolder}\\run",
+      "env": {},
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Data",
+      "presentation": {
+        "group": "Mod Development - mythica",
+        "order": 1
+      },
+      "projectName": "mythica",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\dataRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\dataRunVmArgs.txt",
+        "-Dfml.modFolders\u003dmythica%%D:\\projects\\mythica_mcmod\\mythica\\bin\\main"
+      ],
+      "cwd": "${workspaceFolder}\\run",
+      "env": {},
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "GameTestServer",
+      "presentation": {
+        "group": "Mod Development - mythica",
+        "order": 2
+      },
+      "projectName": "mythica",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\gameTestServerRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\gameTestServerRunVmArgs.txt",
+        "-Dfml.modFolders\u003dmythica%%D:\\projects\\mythica_mcmod\\mythica\\bin\\main"
+      ],
+      "cwd": "${workspaceFolder}\\run",
+      "env": {},
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Server",
+      "presentation": {
+        "group": "Mod Development - mythica",
+        "order": 3
+      },
+      "projectName": "mythica",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\serverRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@D:\\projects\\mythica_mcmod\\mythica\\build\\moddev\\serverRunVmArgs.txt",
+        "-Dfml.modFolders\u003dmythica%%D:\\projects\\mythica_mcmod\\mythica\\bin\\main"
+      ],
+      "cwd": "${workspaceFolder}\\run",
+      "env": {},
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    }
+  ]
+}
