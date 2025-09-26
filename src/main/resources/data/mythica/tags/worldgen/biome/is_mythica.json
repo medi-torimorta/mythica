@@ -1,0 +1,18 @@
+{
+  "values": [
+    "mythica:beach",
+    "mythica:cold_ocean",
+    "mythica:deep_cold_ocean",
+    "mythica:deep_frozen_ocean",
+    "mythica:deep_lukewarm_ocean",
+    "mythica:deep_ocean",
+    "mythica:frozen_ocean",
+    "mythica:frozen_river",
+    "mythica:lukewarm_ocean",
+    "mythica:ocean",
+    "mythica:river",
+    "mythica:snowy_beach",
+    "mythica:stony_shore",
+    "mythica:warm_ocean"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "values": [
+    "mythica:cold_ocean",
+    "mythica:deep_cold_ocean",
+    "mythica:deep_frozen_ocean",
+    "mythica:deep_lukewarm_ocean",
+    "mythica:deep_ocean",
+    "mythica:frozen_ocean",
+    "mythica:lukewarm_ocean",
+    "mythica:warm_ocean",
+    "mythica:ocean"
+  ]
+}

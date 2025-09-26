@@ -1,13 +1,11 @@
 {
-  "itemGroup.mythica": "Example Mod Tab",
-  "block.mythica.example_block": "Example Block",
-  "item.mythica.example_item": "Example Item",
+  "block.mythica.mythica_portal": "Mythica Portal",
+  "item.mythica.mythic_dust": "Mythic Dust",
 
-  "mythica.configuration.title": "Mythica Configs",
-  "mythica.configuration.section.mythica.common.toml": "Mythica Configs",
-  "mythica.configuration.section.mythica.common.toml.title": "Mythica Configs",
-  "mythica.configuration.items": "Item List",
-  "mythica.configuration.logDirtBlock": "Log Dirt Block",
-  "mythica.configuration.magicNumberIntroduction": "Magic Number Text",
-  "mythica.configuration.magicNumber": "Magic Number"
+  "mythica.configuration.title": "Configs",
+  "mythica.configuration.section.mythica.common.toml": "Mythica",
+  "mythica.configuration.section.mythica.common.toml.title": "Mythica",
+  "subtitles.block.mythica_portal.activate": "Mythica Portal activates",
+  "subtitles.block.mythica_portal.ambient": "Mythica Portal shimmers",
+  "subtitles.block.mythica_portal.travel": "Travelling through Mythica Portal"
 }

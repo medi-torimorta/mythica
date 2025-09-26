@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "axis=z": { "model": "mythica:block/mythica_portal_ew" },
+        "axis=x": { "model": "mythica:block/mythica_portal_ns" }
+    }
+}

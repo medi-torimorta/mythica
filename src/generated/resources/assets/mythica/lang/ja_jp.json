@@ -1,0 +1,11 @@
+{
+  "block.mythica.mythica_portal": "ミシカポータル",
+  "config.mythica.return_portal_frame_block_id": "帰還ポータルの枠ブロック",
+  "item.mythica.mythic_dust": "神秘の粉",
+  "mythica.configuration.section.mythica.common.toml": "ミシカ",
+  "mythica.configuration.section.mythica.common.toml.title": "ミシカ",
+  "mythica.configuration.title": "設定",
+  "subtitles.block.mythica_portal.activate": "ミシカポータルが起動する",
+  "subtitles.block.mythica_portal.ambient": "ミシカポータルがきらめく",
+  "subtitles.block.mythica_portal.travel": "ミシカポータルを通過する"
+}

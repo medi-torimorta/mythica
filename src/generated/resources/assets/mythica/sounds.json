@@ -1,0 +1,20 @@
+{
+  "block.mythica_portal.activate": {
+    "sounds": [
+      "mythica:block/mythica_portal_activate"
+    ],
+    "subtitle": "subtitles.block.mythica_portal.activate"
+  },
+  "block.mythica_portal.ambient": {
+    "sounds": [
+      "mythica:block/mythica_portal_ambient"
+    ],
+    "subtitle": "subtitles.block.mythica_portal.ambient"
+  },
+  "block.mythica_portal.travel": {
+    "sounds": [
+      "mythica:block/mythica_portal_travel"
+    ],
+    "subtitle": "subtitles.block.mythica_portal.travel"
+  }
+}
