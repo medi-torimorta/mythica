@@ -117,19 +117,18 @@ public class MythicaPortalBlock extends Block implements Portal {
         if (serverlevel == null) {
             return null;
         } else {
-            boolean flag = serverlevel.dimension() == MythicaDimensions.MYTHICA_DIM;
             WorldBorder worldborder = serverlevel.getWorldBorder();
             double d0 = DimensionType.getTeleportationScale(level.dimensionType(), serverlevel.dimensionType());
             BlockPos blockpos = worldborder.clampToBounds(entity.getX() * d0, entity.getY(), entity.getZ() * d0);
-            return this.getExitPortal(serverlevel, entity, pos, blockpos, flag, worldborder);
+            return this.getExitPortal(serverlevel, entity, pos, blockpos, worldborder);
         }
     }
 
     @Nullable
     private DimensionTransition getExitPortal(
-        ServerLevel level, Entity entity, BlockPos pos, BlockPos exitPos, boolean isMythica, WorldBorder worldBorder
+        ServerLevel level, Entity entity, BlockPos pos, BlockPos exitPos, WorldBorder worldBorder
     ) {
-        Optional<BlockPos> optional = MythicaPortalForcer.findClosestPortalPosition(level, exitPos, isMythica, worldBorder);
+        Optional<BlockPos> optional = MythicaPortalForcer.findClosestPortalPosition(level, exitPos, worldBorder);
         BlockUtil.FoundRectangle blockutil$foundrectangle;
         DimensionTransition.PostDimensionTransition dimensiontransition$postdimensiontransition;
         if (optional.isPresent()) {
@@ -143,7 +142,7 @@ public class MythicaPortalBlock extends Block implements Portal {
                 21,
                 p_351970_ -> level.getBlockState(p_351970_) == blockstate
             );
-            dimensiontransition$postdimensiontransition = DimensionTransition.PLAY_PORTAL_SOUND.then(p_351967_ -> p_351967_.placePortalTicket(blockpos));
+            dimensiontransition$postdimensiontransition = MythicaPortalForcer.PLAY_PORTAL_SOUND.then(p_351967_ -> p_351967_.placePortalTicket(blockpos));
         } else {
             Direction.Axis direction$axis = entity.level().getBlockState(pos).getOptionalValue(AXIS).orElse(Direction.Axis.X);
             Optional<BlockUtil.FoundRectangle> optional1 = MythicaPortalForcer.createPortal(level, exitPos, direction$axis);
@@ -153,7 +152,7 @@ public class MythicaPortalBlock extends Block implements Portal {
             }
 
             blockutil$foundrectangle = optional1.get();
-            dimensiontransition$postdimensiontransition = DimensionTransition.PLAY_PORTAL_SOUND.then(DimensionTransition.PLACE_PORTAL_TICKET);
+            dimensiontransition$postdimensiontransition = MythicaPortalForcer.PLAY_PORTAL_SOUND.then(DimensionTransition.PLACE_PORTAL_TICKET);
         }
 
         return getDimensionTransitionFromExit(entity, pos, blockutil$foundrectangle, level, dimensiontransition$postdimensiontransition);

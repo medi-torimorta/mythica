@@ -41,11 +41,10 @@ public class MythicaPortalForcer {
 		}
 	}
 
-	public static Optional<BlockPos> findClosestPortalPosition(ServerLevel level, BlockPos exitPos, boolean isUndergarden, WorldBorder worldBorder) {
+	public static Optional<BlockPos> findClosestPortalPosition(ServerLevel level, BlockPos exitPos, WorldBorder worldBorder) {
 		PoiManager poimanager = level.getPoiManager();
-		int i = isUndergarden ? 16 : 128;
-		poimanager.ensureLoadedAndValid(level, exitPos, i);
-		return poimanager.getInSquare(holder -> holder.is(MythicaPointOfInterests.MYTHICA_PORTAL), exitPos, i, PoiManager.Occupancy.ANY)
+		poimanager.ensureLoadedAndValid(level, exitPos, 16);
+		return poimanager.getInSquare(holder -> holder.is(MythicaPointOfInterests.MYTHICA_PORTAL), exitPos, 16, PoiManager.Occupancy.ANY)
 			.map(PoiRecord::getPos)
 			.filter(worldBorder::isWithinBounds)
 			.filter(pos -> level.getBlockState(pos).hasProperty(BlockStateProperties.HORIZONTAL_AXIS))

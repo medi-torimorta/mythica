@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
+import medi.makiba.mythica.compat.CreateCompat;
 import medi.makiba.mythica.registry.MythicaBlocks;
 import medi.makiba.mythica.registry.MythicaItems;
 import medi.makiba.mythica.registry.MythicaParticleTypes;
@@ -16,6 +17,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -52,7 +54,10 @@ public class Mythica {
         modContainer.registerConfig(ModConfig.Type.COMMON, MythicaConfig.SPEC);
     }
 
-    private void commonSetup(FMLCommonSetupEvent event) {
-        // Some common setup code
+  private void commonSetup(FMLCommonSetupEvent event) {
+        if (ModList.get().isLoaded("create")) {
+            LOGGER.info("Create detected, loading compat");
+            CreateCompat.register();
+        }
     }
 }

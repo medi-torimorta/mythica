@@ -7,6 +7,7 @@ import medi.makiba.mythica.Mythica;
 import medi.makiba.mythica.Client.Particle.MythicaPortalParticle;
 import medi.makiba.mythica.block.portal.MythicaPortalVisuals;
 import medi.makiba.mythica.registry.MythicaBlocks;
+import medi.makiba.mythica.registry.MythicaItems;
 import medi.makiba.mythica.registry.MythicaParticleTypes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -14,10 +15,12 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.ComputeFovModifierEvent;
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 
 @EventBusSubscriber(modid = Mythica.MODID, value = net.neoforged.api.distmarker.Dist.CLIENT)
@@ -67,6 +70,13 @@ public class ModClientEvents {
 			RenderSystem.depthMask(true);
 			RenderSystem.enableDepthTest();
 			graphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
+		}
+	}
+
+	@SubscribeEvent
+	private static void addItemToCreativeTab(BuildCreativeModeTabContentsEvent event) {
+		if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+			event.accept(MythicaItems.MYTHIC_DUST.get());
 		}
 	}
 
