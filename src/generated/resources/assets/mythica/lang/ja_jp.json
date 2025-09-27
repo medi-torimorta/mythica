@@ -1,4 +1,18 @@
 {
+  "biome.mythica.beach": "砂浜",
+  "biome.mythica.cold_ocean": "冷たい海",
+  "biome.mythica.deep_cold_ocean": "冷たい深海",
+  "biome.mythica.deep_frozen_ocean": "凍った深海",
+  "biome.mythica.deep_lukewarm_ocean": "ぬるい深海",
+  "biome.mythica.deep_ocean": "深海",
+  "biome.mythica.frozen_ocean": "凍った海",
+  "biome.mythica.frozen_river": "凍った川",
+  "biome.mythica.lukewarm_ocean": "ぬるい海",
+  "biome.mythica.ocean": "海",
+  "biome.mythica.river": "河川",
+  "biome.mythica.snowy_beach": "雪の砂浜",
+  "biome.mythica.stony_shore": "石だらけの海岸",
+  "biome.mythica.warm_ocean": "暖かい海",
   "block.mythica.mythica_portal": "ミシカポータル",
   "config.mythica.return_portal_frame_block_id": "帰還ポータルの枠ブロック",
   "item.mythica.mythic_dust": "神秘の粉",
@@ -7,5 +21,9 @@
   "mythica.configuration.title": "設定",
   "subtitles.block.mythica_portal.activate": "ミシカポータルが起動する",
   "subtitles.block.mythica_portal.ambient": "ミシカポータルがきらめく",
-  "subtitles.block.mythica_portal.travel": "ミシカポータルを通過する"
+  "subtitles.block.mythica_portal.travel": "ミシカポータルを通過する",
+  "tag.mythica.is_beach": "ミシカの砂浜",
+  "tag.mythica.is_mythica": "ミシカのバイオーム",
+  "tag.mythica.is_ocean": "ミシカの海",
+  "tag.mythica.is_river": "ミシカの河川"
 }

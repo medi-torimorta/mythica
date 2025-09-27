@@ -1,11 +1,29 @@
 {
+  "biome.mythica.beach": "Beach",
+  "biome.mythica.cold_ocean": "Cold Ocean",
+  "biome.mythica.deep_cold_ocean": "Deep Cold Ocean",
+  "biome.mythica.deep_frozen_ocean": "Deep Frozen Ocean",
+  "biome.mythica.deep_lukewarm_ocean": "Deep Lukewarm Ocean",
+  "biome.mythica.deep_ocean": "Deep Ocean",
+  "biome.mythica.frozen_ocean": "Frozen Ocean",
+  "biome.mythica.frozen_river": "Frozen River",
+  "biome.mythica.lukewarm_ocean": "Lukewarm Ocean",
+  "biome.mythica.ocean": "Ocean",
+  "biome.mythica.river": "River",
+  "biome.mythica.snowy_beach": "Snowy Beach",
+  "biome.mythica.stony_shore": "Stony Shore",
+  "biome.mythica.warm_ocean": "Warm Ocean",
   "block.mythica.mythica_portal": "Mythica Portal",
+  "config.mythica.return_portal_frame_block_id": "Return Portal Frame Block",
   "item.mythica.mythic_dust": "Mythic Dust",
-
   "mythica.configuration.title": "Configs",
   "mythica.configuration.section.mythica.common.toml": "Mythica",
   "mythica.configuration.section.mythica.common.toml.title": "Mythica",
   "subtitles.block.mythica_portal.activate": "Mythica Portal activates",
   "subtitles.block.mythica_portal.ambient": "Mythica Portal shimmers",
-  "subtitles.block.mythica_portal.travel": "Travelling through Mythica Portal"
+  "subtitles.block.mythica_portal.travel": "Travelling through Mythica Portal",
+  "tag.mythica.is_beach": "Beaches of Mythica",
+  "tag.mythica.is_mythica": "is Mythica",
+  "tag.mythica.is_ocean": "Oceans of Mythica",
+  "tag.mythica.is_river": "Rivers of Mythica"
 }
