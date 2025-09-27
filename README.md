@@ -1,25 +1,19 @@
 
-Installation information
+# Mythica
 =======
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+This mod adds a new dimension, "Mythica" to the game.
+The Mythica Dimension is a copy of the Overworld, and is intended for use in ModPacks.
+This Mod adds 1 item, the Mythic powder.
+By default, right-clicking inside a portal frame made of reinforced deepslate, like those generated in Ancient Cities will spawn a portal to the Mythica Dimension.
+The Mythic powder is unobtainable by default.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+## Configuration
+It is recommended to add a recipe or a loot table to obtain the Mythic powder via Datapacks.
+The tag `#mythica:portal_frame_blocks` defines the blocks usable for portal frames,
+and `#mythica:portal_replaceable` the blocks that can be replaced when a portal is generated inside the frame.
+Use the config option to set the blocks used when an exit portal is generated. 
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
-
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
-
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+## Credits
+Portal code adapted from [quek04/undergarden](https://github.com/quek04/undergarden)
+Sound effects by [OtoLogic](https://otologic.jp/) and [soundeffect-lab](https://soundeffect-lab.info/)
