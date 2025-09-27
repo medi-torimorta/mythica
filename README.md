@@ -17,6 +17,11 @@ and `#mythica:portal_replaceable` the blocks that can be replaced when a portal 
 
 Use the config option to set the blocks used when an exit portal is generated. 
 
+## Integration
+Create:
+
+The Mythica Portal works with Create trains, allowing the rails to connect through the portal and the train to pass through.
+
 ## Credits
 Portal code adapted from [quek04/undergarden](https://github.com/quek04/undergarden)
 
