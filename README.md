@@ -4,7 +4,7 @@
 This mod adds a new dimension, "Mythica" to the game.
 
 The Mythica Dimension is a copy of the Overworld, and is intended for use in ModPacks.
-The Scale is 1:1 with the overworld, and is an unnatural dimension meaning players will not be able to sleep. These can be modified with datapacks by overwriting the biometype file.
+The Scale is 1:1 with the overworld, and is an unnatural dimension meaning players will not be able to sleep. These can be modified with datapacks by overwriting the dimensiontype file.
 
 This Mod adds 1 item, the Mythic dust, unobtainable in survival.
 
