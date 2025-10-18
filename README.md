@@ -25,6 +25,11 @@ Use the config option to set the blocks used when an exit portal is generated.
 Terrablender-added overworld biomes can be set to copied to Mythica, ignored, or added to mythica and removed from the overworld.  
 Copied biomes can be blacklisted in a per-mod basis.  
 
+## Integration
+Create:
+
+The Mythica Portal works with Create trains, allowing the rails to connect through the portal and the train to pass through.
+
 ## Credits
 Portal code adapted from [quek04/undergarden](https://github.com/quek04/undergarden/)  
 Terrablender compat code adapted form [RazorDevs/Aeroblender](https://github.com/RazorDevs/Aeroblender/),  
