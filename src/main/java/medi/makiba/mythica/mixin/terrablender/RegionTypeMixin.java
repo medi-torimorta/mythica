@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import medi.makiba.mythica.compat.terrablender.implementation.MythicaRegionType;
+import medi.makiba.mythica.compat.terrablender.MythicaRegionType;
 import terrablender.api.RegionType;
 
 import java.util.ArrayList;

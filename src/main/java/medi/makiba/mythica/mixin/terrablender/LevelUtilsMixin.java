@@ -9,9 +9,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.google.common.collect.ImmutableList;
 
-import medi.makiba.mythica.compat.terrablender.implementation.DimensionTypeTags;
-import medi.makiba.mythica.compat.terrablender.implementation.MythicaRegionType;
-import medi.makiba.mythica.compat.terrablender.implementation.MythicaRuleCategory;
+import medi.makiba.mythica.compat.terrablender.DimensionTypeTags;
+import medi.makiba.mythica.compat.terrablender.MythicaRegionType;
+import medi.makiba.mythica.compat.terrablender.MythicaRuleCategory;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
@@ -26,7 +26,6 @@ import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
-import terrablender.api.Region;
 import terrablender.api.RegionType;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
@@ -56,7 +55,7 @@ public class LevelUtilsMixin {
         }
     }
 
-    @Inject(at = @At(value = "HEAD"), method = "initializeBiomes(Lnet/minecraft/core/RegistryAccess;Lnet/minecraft/core/Holder;Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/world/level/chunk/ChunkGenerator;J)V", remap = false, cancellable = true)
+    @Inject(at = @At("HEAD"), method = "initializeBiomes(Lnet/minecraft/core/RegistryAccess;Lnet/minecraft/core/Holder;Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/world/level/chunk/ChunkGenerator;J)V", remap = false, cancellable = true)
     private static void initializeMythicaBiomes(RegistryAccess registryAccess, Holder<DimensionType> dimensionType, ResourceKey<LevelStem> levelResourceKey, ChunkGenerator chunkGenerator, long seed, CallbackInfo ci) {
         RegionType regionType = getRegionTypeForDimension(dimensionType);
         if (regionType == MythicaRegionType.MYTHICA) {

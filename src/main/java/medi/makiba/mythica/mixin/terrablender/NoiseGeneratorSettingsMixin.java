@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import medi.makiba.mythica.compat.terrablender.implementation.MythicaRuleCategory;
-import medi.makiba.mythica.compat.terrablender.implementation.TerraBlenderCompat;
+import medi.makiba.mythica.compat.terrablender.MythicaRuleCategory;
+import medi.makiba.mythica.compat.terrablender.MythicaSurfaceRuleData;
 import terrablender.api.SurfaceRuleManager;
 import terrablender.worldgen.IExtendedNoiseGeneratorSettings;
 
@@ -32,7 +32,7 @@ public class NoiseGeneratorSettingsMixin implements IExtendedNoiseGeneratorSetti
     private void surfaceRule(CallbackInfoReturnable<SurfaceRules.RuleSource> cir) {
         if (this.mythica$ruleCategory == MythicaRuleCategory.MYTHICA) {
             if (this.mythica$namespacedSurfaceRuleSource == null)
-                this.mythica$namespacedSurfaceRuleSource = TerraBlenderCompat.getMythicaNamespacedRules(MythicaRuleCategory.MYTHICA, this.surfaceRule);
+                this.mythica$namespacedSurfaceRuleSource = MythicaSurfaceRuleData.getMythicaNamespacedRules(MythicaRuleCategory.MYTHICA, this.surfaceRule);
             cir.setReturnValue(this.mythica$namespacedSurfaceRuleSource);
         }
     }

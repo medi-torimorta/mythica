@@ -1,4 +1,4 @@
-package medi.makiba.mythica.compat;
+package medi.makiba.mythica.compat.create;
 
 import com.simibubi.create.api.contraption.train.PortalTrackProvider;
 import com.simibubi.create.content.trains.track.AllPortalTracks;

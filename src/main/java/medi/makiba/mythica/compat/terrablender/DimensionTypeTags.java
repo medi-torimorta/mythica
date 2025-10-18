@@ -1,4 +1,4 @@
-package medi.makiba.mythica.compat.terrablender.implementation;
+package medi.makiba.mythica.compat.terrablender;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;

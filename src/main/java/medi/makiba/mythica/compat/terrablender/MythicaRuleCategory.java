@@ -1,4 +1,4 @@
-package medi.makiba.mythica.compat.terrablender.implementation;
+package medi.makiba.mythica.compat.terrablender;
 
 import terrablender.api.SurfaceRuleManager;
 

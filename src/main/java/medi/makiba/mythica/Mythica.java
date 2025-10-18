@@ -4,10 +4,7 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import medi.makiba.mythica.compat.CreateCompat;
-import medi.makiba.mythica.compat.terrablender.ITerraBlenderCompat;
-import medi.makiba.mythica.compat.terrablender.TerraBlenderFallbackImpl;
-import medi.makiba.mythica.compat.terrablender.implementation.TerraBlenderCompat;
+import medi.makiba.mythica.compat.create.CreateCompat;
 import medi.makiba.mythica.registry.MythicaBlocks;
 import medi.makiba.mythica.registry.MythicaItems;
 import medi.makiba.mythica.registry.MythicaParticleTypes;
@@ -24,7 +21,6 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 public class Mythica {
     public static final String MODID = "mythica";
     public static final Logger LOGGER = LogUtils.getLogger();
-    public static ITerraBlenderCompat TERRABLENDER_COMPAT;
 
 
     public Mythica(IEventBus modEventBus, ModContainer modContainer) {
@@ -44,13 +40,6 @@ public class Mythica {
         if (ModList.get().isLoaded("create")) {
             LOGGER.info("Create detected, loading compat");
             CreateCompat.register();
-        }
-        if (ModList.get().isLoaded("terrablender")) {
-            TERRABLENDER_COMPAT = new TerraBlenderCompat();
-            LOGGER.info("TerraBlender detected, enabling compatibility.");
-        } else {
-            TERRABLENDER_COMPAT = new TerraBlenderFallbackImpl();
-            LOGGER.info("TerraBlender not detected, compatibility disabled.");
         }
     }
 }

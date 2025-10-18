@@ -7,8 +7,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import medi.makiba.mythica.compat.terrablender.implementation.MythicaRuleCategory;
-import medi.makiba.mythica.compat.terrablender.implementation.MythicaSurfaceRuleData;
+import medi.makiba.mythica.compat.terrablender.MythicaRuleCategory;
+import medi.makiba.mythica.compat.terrablender.MythicaSurfaceRuleData;
 import terrablender.api.SurfaceRuleManager;
 
 import java.util.Map;

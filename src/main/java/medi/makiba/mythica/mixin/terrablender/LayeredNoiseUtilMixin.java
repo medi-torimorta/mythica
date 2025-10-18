@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import medi.makiba.mythica.MythicaConfig;
-import medi.makiba.mythica.compat.terrablender.implementation.MythicaRegionType;
+import medi.makiba.mythica.compat.terrablender.MythicaRegionType;
 import terrablender.api.RegionType;
 import terrablender.worldgen.noise.Area;
 import terrablender.worldgen.noise.AreaTransformer0;
