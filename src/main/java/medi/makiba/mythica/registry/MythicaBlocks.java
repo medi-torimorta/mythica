@@ -5,7 +5,6 @@ import java.util.function.Supplier;
 import medi.makiba.mythica.Mythica;
 import medi.makiba.mythica.block.portal.MythicaPortalBlock;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 

@@ -15,5 +15,6 @@ and `#mythica:portal_replaceable` the blocks that can be replaced when a portal 
 Use the config option to set the blocks used when an exit portal is generated. 
 
 ## Credits
-Portal code adapted from [quek04/undergarden](https://github.com/quek04/undergarden)
+Portal code adapted from [quek04/undergarden](https://github.com/quek04/undergarden/)
+Terrablender compat code adapted form [RazorDevs/Aeroblender](https://github.com/RazorDevs/Aeroblender/),
 Sound effects by [OtoLogic](https://otologic.jp/) and [soundeffect-lab](https://soundeffect-lab.info/)

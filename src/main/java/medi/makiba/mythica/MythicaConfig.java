@@ -16,5 +16,17 @@ public class MythicaConfig {
         .translation("config.mythica.return_portal_frame_block_id")
         .define("Return Portal Frame Block ID", BuiltInRegistries.BLOCK.getKey(Blocks.REINFORCED_DEEPSLATE).toString());
 
+    public static final ModConfigSpec.ConfigValue<Integer> MYTHICA_REGION_SIZE = BUILDER
+        .comment("""
+            Determines the size of the Mythica region when Terrablender is installed""")
+        .translation("config.mythica.mythica_region_size")
+        .defineInRange("Mythica Region Size", 3, 2, 6);
+
+    public static final ModConfigSpec.ConfigValue<Integer> OVERWORLD_REGION_WEIGHT = BUILDER
+        .comment("""
+            Determines the weight of the vanilla overworld region when Terrablender is installed""")
+        .translation("config.mythica.overworld_region_weight")
+        .defineInRange("Vanilla Overworld Region Weight", 10, 1, Integer.MAX_VALUE);
+
     static final ModConfigSpec SPEC = BUILDER.build();
 }

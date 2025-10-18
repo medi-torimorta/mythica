@@ -3,7 +3,6 @@ package medi.makiba.mythica.block.portal;
 import java.util.Optional;
 
 import com.mojang.logging.LogUtils;
-import com.mojang.serialization.MapCodec;
 
 import medi.makiba.mythica.registry.MythicaParticleTypes;
 import medi.makiba.mythica.registry.MythicaSoundEvents;
@@ -13,7 +12,7 @@ import javax.annotation.Nullable;
 import net.minecraft.BlockUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleTypes;
+
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;

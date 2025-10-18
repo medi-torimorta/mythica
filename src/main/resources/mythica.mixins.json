@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "package": "medi.makiba.mythica.mixin",
+  "plugin": "medi.makiba.mythica.mixin.MixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "terrablender.LayeredNoiseUtilMixin",
+    "terrablender.LevelUtilsMixin",
+    "terrablender.NoiseGeneratorSettingsMixin",
+    "terrablender.RegionsMixin",
+    "terrablender.RegionTypeMixin",
+    "terrablender.RuleCategoryMixin",
+    "terrablender.SurfaceRuleManagerAccessor",
+    "terrablender.SurfaceRuleManagerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
