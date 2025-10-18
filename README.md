@@ -4,7 +4,7 @@
 [![ModRinth Downloads](https://img.shields.io/modrinth/dt/mythica?style=flat&logo=modrinth&logoColor=%2300AF5C&label=Modrinth&color=%2300AF5C)](https://modrinth.com/mod/mythica)
 [![Minecraft Versions](https://img.shields.io/badge/MC-1.21.1-green?style=flat&logo=minecraft&logoColor=white)](https://www.minecraft.net/ja-jp/about-minecraft)
 [![Server Side](https://img.shields.io/badge/Side-Server%26Client-orange?style=flat)](#)
-[![License](https://img.shields.io/github/license/medi-torimorta/mythica?style=flat&color=purple)](https://github.com/medi-torimorta/mythica/?tab=License-1-ov-file)
+[![License](https://img.shields.io/github/license/medi-torimorta/mythica?style=flat&color=purple)](https://github.com/medi-torimorta/mythica/?tab=LGPL-3.0-1-ov-file)
 
 
 ### Now Compatible with Terrablender Biomes!  
@@ -26,9 +26,10 @@ Terrablender-added overworld biomes can be set to copied to Mythica, ignored, or
 Copied biomes can be blacklisted in a per-mod basis.  
 
 ## Integration
-Create:
-
-The Mythica Portal works with Create trains, allowing the rails to connect through the portal and the train to pass through.
+# Create:
+The Mythica Portal works with Create trains, allowing the rails to connect through the portal and the train to pass through.  
+# TerraBlender:
+Allows for copying/transferring TerraBlender-added biomes from the Overworld to Mythica.
 
 ## Credits
 Portal code adapted from [quek04/undergarden](https://github.com/quek04/undergarden/)  
