@@ -36,6 +36,8 @@ public class MythicaLangProvider extends LanguageProvider {
         this.add("mythica.configuration.title", "設定");
         this.add("mythica.configuration.section.mythica.common.toml", "ミシカ");
         this.add("mythica.configuration.section.mythica.common.toml.title", "ミシカ");
+        this.add("mythica.configuration.mythica_general_settings", "全般設定");
+        this.add("mythica.configuration.terrablender_biome_settings", "Terrablender設定");
 
         this.addItem(MythicaItems.MYTHIC_DUST, "神秘の粉");
 
@@ -46,6 +48,10 @@ public class MythicaLangProvider extends LanguageProvider {
         this.addSubtitle("block", "mythica_portal.travel", "ミシカポータルを通過する");
 
         this.addConfig("return_portal_frame_block_id", "帰還ポータルの枠ブロック");
+        this.addConfig("modded_biome_copy_mode", "MODバイオームのコピーモード");
+        this.addConfig("mythica_region_size", "各リージョンの大きさ");
+        this.addConfig("vanilla_region_weight", "バニラリージョンのウェイト");
+        this.addConfig("mod_blacklist", "バイオームMODブラックリスト");
 
         this.addBiome("beach", "砂浜");
         this.addBiome("cold_ocean", "冷たい海");

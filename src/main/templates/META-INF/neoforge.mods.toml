@@ -34,7 +34,7 @@ displayName="${mod_name}" #mandatory
 #logoFile="examplemod.png" #optional
 
 # A text field displayed in the mod UI
-credits="Portal code adapted from quek04/undergarden, Sound effects from OtoLogic and soundeffect-lab"
+credits="Portal code adapted from quek04/undergarden, Terrablender compat code adapted form RazorDevs/Aeroblender, Sound effects from OtoLogic and soundeffect-lab"
 
 # A text field displayed in the mod UI
 authors="${mod_authors}"
@@ -43,18 +43,18 @@ authors="${mod_authors}"
 description='''${mod_description}'''
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
-#[[mixins]]
-#config="${mod_id}.mixins.json"
+[[mixins]]
+config="${mod_id}.mixins.json"
 
 # The [[accessTransformers]] block allows you to declare where your AT file is.
 # If this block is omitted, a fallback attempt will be made to load an AT from META-INF/accesstransformer.cfg
-#[[accessTransformers]]
-#file="META-INF/accesstransformer.cfg"
+[[accessTransformers]]
+file="META-INF/accesstransformer.cfg"
 
 # The coremods config file path is not configurable and is always loaded from META-INF/coremods.json
 
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies."${mod_id}"]] #optional
+[["dependencies.${mod_id}"]] #optional
 # the modid of the dependency
 modId="neoforge"
 # The type of the dependency. Can be one of "required", "optional", "incompatible" or "discouraged" (case insensitive).
@@ -73,7 +73,7 @@ ordering="NONE"
 side="BOTH"
 
 # Here's another dependency
-[[dependencies."${mod_id}"]]
+[["dependencies.${mod_id}"]]
 modId="minecraft"
 type="required"
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
@@ -81,11 +81,19 @@ versionRange="${minecraft_version_range}"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies."${mod_id}"]]
+[["dependencies.${mod_id}"]]
 modId="create"
 type="optional"
 reason="integration"
 versionRange="${create_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[["dependencies.${mod_id}"]]
+modId="terrablender"
+type="optional"
+reason="integration"
+versionRange="${terrablender_version_range}"
 ordering="NONE"
 side="BOTH"
 
