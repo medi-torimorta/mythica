@@ -26,9 +26,9 @@ Terrablender-added overworld biomes can be set to copied to Mythica, ignored, or
 Copied biomes can be blacklisted in a per-mod basis.  
 
 ## Integration
-# Create:
+### Create:
 The Mythica Portal works with Create trains, allowing the rails to connect through the portal and the train to pass through.  
-# TerraBlender:
+### TerraBlender:
 Allows for copying/transferring TerraBlender-added biomes from the Overworld to Mythica.
 
 ## Credits
