@@ -48,6 +48,8 @@ public class MythicaLangProvider extends LanguageProvider {
         this.addSubtitle("block", "mythica_portal.travel", "ミシカポータルを通過する");
 
         this.addConfig("return_portal_frame_block_id", "帰還ポータルの枠ブロック");
+        this.addConfig("seed_mode", "シード設定モード");
+        this.addConfig("seed_value", "シード設定値");
         this.addConfig("modded_biome_copy_mode", "MODバイオームのコピーモード");
         this.addConfig("mythica_region_size", "各リージョンの大きさ");
         this.addConfig("vanilla_region_weight", "バニラリージョンのウェイト");

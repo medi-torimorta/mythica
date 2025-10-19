@@ -15,6 +15,8 @@
   "biome.mythica.warm_ocean": "Warm Ocean",
   "block.mythica.mythica_portal": "Mythica Portal",
   "config.mythica.return_portal_frame_block_id": "Return Portal Frame Block",
+  "config.mythica.seed_mode": "Seed Mode",
+  "config.mythica.seed_value": "Seed Value",
   "config.mythica.mythica_region_size": "Mythica Region Size",
   "config.mythica.vanilla_region_weight": "Vanilla Region Weight",
   "config.mythica.mod_blacklist": "Biome Mod Blacklist",

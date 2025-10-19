@@ -34,6 +34,7 @@ public class Mythica {
         MythicaParticleTypes.PARTICLES.register(modEventBus);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, MythicaConfig.SPEC);
+        modContainer.registerConfig(ModConfig.Type.SERVER, MythicaConfig.SERVER_SPEC);
     }
 
   private void commonSetup(FMLCommonSetupEvent event) {

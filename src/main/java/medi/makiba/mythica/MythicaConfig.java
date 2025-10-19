@@ -5,18 +5,22 @@ import java.util.List;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.ModConfigSpec;
-import net.neoforged.neoforge.common.ModConfigSpec.ConfigValue;
 
 
 public class MythicaConfig {
     static final ModConfigSpec SPEC;
+    static final ModConfigSpec SERVER_SPEC;
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
+    private static final ModConfigSpec.Builder SERVER_BUILDER = new ModConfigSpec.Builder();
 
     public static final ModConfigSpec.ConfigValue<String> RETURN_PORTAL_FRAME_BLOCK_ID;
     public static final ModConfigSpec.ConfigValue<Integer> MYTHICA_REGION_SIZE;
     public static final ModConfigSpec.ConfigValue<Integer> VANILLA_REGION_WEIGHT;
     public static final ModConfigSpec.ConfigValue<ModdedBiomeCopyModes> MODDED_BIOME_COPY_MODE;
-    public static final ConfigValue<List<? extends String>> MOD_BLACKLIST;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> MOD_BLACKLIST;
+
+    public static final ModConfigSpec.ConfigValue<SeedModes> SEED_MODE;
+    public static final ModConfigSpec.ConfigValue<Long> SEED_VALUE;
 
     public enum ModdedBiomeCopyModes{
         NO_COPY,
@@ -24,6 +28,11 @@ public class MythicaConfig {
         COPY_REMOVE
     }
 
+    public enum SeedModes{
+        WORLD_SEED,
+        VALUE,
+        OFFSET_VALUE
+    }
 
     static {
         BUILDER.push("mythica_general_settings");
@@ -68,6 +77,24 @@ public class MythicaConfig {
             .defineListAllowEmpty("Mod Blacklist", List.of(), () -> "", o -> o instanceof String);
         BUILDER.pop();
         SPEC = BUILDER.build();
+
+        SEED_MODE = SERVER_BUILDER
+        .comment("""
+            Determines how the seed for mythica is generated
+            WORLD_SEED uses the same seed as the overworld
+            VALUE uses the seed_value as the fixed seed for mythica
+            OFFSET_VALUE uses the overworld seed plus a fixed offset of the seed_value""")
+        .translation("config.mythica.seed_mode")
+        .worldRestart()
+        .defineEnum("Seed Mode", SeedModes.OFFSET_VALUE);
+        SEED_VALUE = SERVER_BUILDER
+        .comment("""
+            The seed value used when seed_mode is set to VALUE or OFFSET_VALUE""")
+        .translation("config.mythica.seed_value")
+        .worldRestart()
+        .defineInRange("Seed Value", 972349181L, Long.MIN_VALUE, Long.MAX_VALUE);
+
+        SERVER_SPEC = SERVER_BUILDER.build();
     }
 
     

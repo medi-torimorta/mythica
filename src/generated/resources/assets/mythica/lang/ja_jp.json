@@ -18,6 +18,8 @@
   "config.mythica.modded_biome_copy_mode": "MODバイオームのコピーモード",
   "config.mythica.mythica_region_size": "各リージョンの大きさ",
   "config.mythica.return_portal_frame_block_id": "帰還ポータルの枠ブロック",
+  "config.mythica.seed_mode": "シード設定モード",
+  "config.mythica.seed_value": "シード設定値",
   "config.mythica.vanilla_region_weight": "バニラリージョンのウェイト",
   "item.mythica.mythic_dust": "神秘の粉",
   "mythica.configuration.mythica_general_settings": "全般設定",

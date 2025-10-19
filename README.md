@@ -21,15 +21,16 @@ The Mythic powder is unobtainable by default.
 It is recommended to add a recipe or a loot table to obtain the Mythic powder via Datapacks.  
 The tag `#mythica:portal_frame_blocks` defines the blocks usable for portal frames,  
 and `#mythica:portal_replaceable` the blocks that can be replaced when a portal is generated inside the frame.  
-Use the config option to set the blocks used when an exit portal is generated.  
+Check the common config to set the blocks used when an exit portal is generated.  
 Terrablender-added overworld biomes can be set to copied to Mythica, ignored, or added to mythica and removed from the overworld.  
 Copied biomes can be blacklisted in a per-mod basis.  
+The world seed used in mythica dimension can be configured in the server config file.
 
 ## Integration
 ### Create:
 The Mythica Portal works with Create trains, allowing the rails to connect through the portal and the train to pass through.  
 ### TerraBlender:
-Allows for copying/transferring TerraBlender-added biomes from the Overworld to Mythica.
+Allows for copying/transferring TerraBlender-added biomes from the Overworld to Mythica.  
 
 ## Credits
 Portal code adapted from [quek04/undergarden](https://github.com/quek04/undergarden/)  
