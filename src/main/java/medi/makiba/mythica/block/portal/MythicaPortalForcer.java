@@ -31,7 +31,7 @@ import medi.makiba.mythica.registry.MythicaPointOfInterests;
 
 public class MythicaPortalForcer {
 
-	private static final BlockState FRAME = !BuiltInRegistries.BLOCK.containsKey(Objects.requireNonNull(ResourceLocation.tryParse(MythicaConfig.RETURN_PORTAL_FRAME_BLOCK_ID.get()))) ? Blocks.STONE_BRICKS.defaultBlockState() : BuiltInRegistries.BLOCK.get(ResourceLocation.tryParse(MythicaConfig.RETURN_PORTAL_FRAME_BLOCK_ID.get())).defaultBlockState();
+	private static final BlockState FRAME = !BuiltInRegistries.BLOCK.containsKey(Objects.requireNonNull(ResourceLocation.tryParse(MythicaConfig.RETURN_PORTAL_FRAME_BLOCK_ID.get()))) ? Blocks.REINFORCED_DEEPSLATE.defaultBlockState() : BuiltInRegistries.BLOCK.get(ResourceLocation.tryParse(MythicaConfig.RETURN_PORTAL_FRAME_BLOCK_ID.get())).defaultBlockState();
 
 	public static final DimensionTransition.PostDimensionTransition PLAY_PORTAL_SOUND = MythicaPortalForcer::playPortalSound;
 

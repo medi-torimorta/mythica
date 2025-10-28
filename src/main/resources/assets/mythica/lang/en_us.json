@@ -23,8 +23,6 @@
   "config.mythica.modded_biome_copy_mode": "Modded Biome Copy Mode",
   "item.mythica.mythic_dust": "Mythic Dust",
   "mythica.configuration.title": "Configs",
-  "mythica.configuration.section.mythica.common.toml": "Mythica",
-  "mythica.configuration.section.mythica.common.toml.title": "Mythica",
   "mythica.configuration.mythica_general_settings": "Mythica General Settings",
   "mythica.configuration.terrablender_biome_settings": "Terrablender Biome Settings",
   "subtitles.block.mythica_portal.activate": "Mythica Portal activates",

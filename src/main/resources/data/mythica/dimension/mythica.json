@@ -2,7 +2,7 @@
   "type": "mythica:mythica_dimtype",
   "generator": {
     "type": "minecraft:noise",
-    "settings": "minecraft:overworld",
+    "settings": "mythica:mythica",
     "biome_source": {
       "type": "minecraft:multi_noise",
       "biomes": [

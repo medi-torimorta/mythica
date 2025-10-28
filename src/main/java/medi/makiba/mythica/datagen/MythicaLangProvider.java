@@ -34,8 +34,8 @@ public class MythicaLangProvider extends LanguageProvider {
     protected void addTranslations() {
 
         this.add("mythica.configuration.title", "設定");
-        this.add("mythica.configuration.section.mythica.common.toml", "ミシカ");
-        this.add("mythica.configuration.section.mythica.common.toml.title", "ミシカ");
+        this.add("mythica.configuration.section.mythica.server.toml.title", "サーバー設定");
+        this.add("mythica.configuration.section.mythica.common.toml.title", "共通設定");
         this.add("mythica.configuration.mythica_general_settings", "全般設定");
         this.add("mythica.configuration.terrablender_biome_settings", "Terrablender設定");
 
