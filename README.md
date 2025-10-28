@@ -32,6 +32,12 @@ The Mythica Portal works with Create trains, allowing the rails to connect throu
 ### TerraBlender:
 Allows for copying/transferring TerraBlender-added biomes from the Overworld to Mythica.  
 
+## Bonus
+The mod includes unused ocean/river/beach/cave biome variants.  
+These are exact copies of their vanilla counterparts, and intended to be used for replacing them by datapacks.  
+Doing so will give you more control over what content are added to mythica/overworld separately.  
+see `data/mythica/worldgen/biome` for content.
+
 ## Credits
 Portal code adapted from [quek04/undergarden](https://github.com/quek04/undergarden/)  
 Terrablender compat code adapted form [RazorDevs/Aeroblender](https://github.com/RazorDevs/Aeroblender/),  
