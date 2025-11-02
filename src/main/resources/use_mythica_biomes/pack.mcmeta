@@ -1,0 +1,10 @@
+{
+    "features": {
+        "enabled": [
+        ]
+    },
+    "pack":{
+        "pack_format":48,
+        "description":"Use Mythica Biomes for generation."
+    }
+}

@@ -3,7 +3,13 @@ package medi.makiba.mythica.event;
 import medi.makiba.mythica.Mythica;
 import medi.makiba.mythica.block.portal.MythicaPortalVisuals;
 import medi.makiba.mythica.network.MythicaPortalSoundPacket;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
@@ -24,4 +30,16 @@ public class ModEvents {
 	        MythicaPortalVisuals.handlePortalVisuals(event.getEntity());
 		}
     }
+
+	@SubscribeEvent
+	public static void addFeaturePacks(final AddPackFindersEvent event) {
+		event.addPackFinders(
+			ResourceLocation.fromNamespaceAndPath("mythica", "use_mythica_biomes"),
+			PackType.SERVER_DATA,
+			Component.literal("Mythica: Use Mythica Biomes"),
+			PackSource.FEATURE,
+			false,
+			Pack.Position.TOP
+		);
+	}
 }

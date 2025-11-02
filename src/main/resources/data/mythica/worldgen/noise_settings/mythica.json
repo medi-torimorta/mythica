@@ -430,7 +430,8 @@
                     "if_true": {
                       "type": "minecraft:biome",
                       "biome_is": [
-                        "minecraft:wooded_badlands"
+                        "minecraft:wooded_badlands",
+                        "mythica:wooded_badlands"
                       ]
                     },
                     "then_run": {
@@ -529,7 +530,8 @@
                     "if_true": {
                       "type": "minecraft:biome",
                       "biome_is": [
-                        "minecraft:swamp"
+                        "minecraft:swamp",
+                        "mythica:swamp"
                       ]
                     },
                     "then_run": {
@@ -581,7 +583,8 @@
                     "if_true": {
                       "type": "minecraft:biome",
                       "biome_is": [
-                        "minecraft:mangrove_swamp"
+                        "minecraft:mangrove_swamp",
+                        "mythica:mangrove_swamp"
                       ]
                     },
                     "then_run": {
@@ -638,7 +641,10 @@
                 "biome_is": [
                   "minecraft:badlands",
                   "minecraft:eroded_badlands",
-                  "minecraft:wooded_badlands"
+                  "minecraft:wooded_badlands",
+                  "mythica:badlands",
+                  "mythica:eroded_badlands",
+                  "mythica:wooded_badlands"
                 ]
               },
               "then_run": {
@@ -998,7 +1004,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:frozen_peaks"
+                              "minecraft:frozen_peaks",
+                              "mythica:frozen_peaks"
                             ]
                           },
                           "then_run": {
@@ -1069,7 +1076,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:snowy_slopes"
+                              "minecraft:snowy_slopes",
+                              "mythica:snowy_slopes"
                             ]
                           },
                           "then_run": {
@@ -1134,7 +1142,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:jagged_peaks"
+                              "minecraft:jagged_peaks",
+                              "mythica:jagged_peaks"
                             ]
                           },
                           "then_run": {
@@ -1175,7 +1184,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:grove"
+                              "minecraft:grove",
+                              "mythica:grove"
                             ]
                           },
                           "then_run": {
@@ -1442,7 +1452,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:windswept_savanna"
+                              "minecraft:windswept_savanna",
+                              "mythica:windswept_savanna"
                             ]
                           },
                           "then_run": {
@@ -1486,7 +1497,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:windswept_gravelly_hills"
+                              "minecraft:windswept_gravelly_hills",
+                              "mythica:windswept_gravelly_hills"
                             ]
                           },
                           "then_run": {
@@ -1617,7 +1629,9 @@
                             "type": "minecraft:biome",
                             "biome_is": [
                               "minecraft:old_growth_pine_taiga",
-                              "minecraft:old_growth_spruce_taiga"
+                              "minecraft:old_growth_spruce_taiga",
+                              "mythica:old_growth_pine_taiga",
+                              "mythica:old_growth_spruce_taiga"
                             ]
                           },
                           "then_run": {
@@ -1664,7 +1678,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:ice_spikes"
+                              "minecraft:ice_spikes",
+                              "mythica:ice_spikes"
                             ]
                           },
                           "then_run": {
@@ -1688,7 +1703,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:mangrove_swamp"
+                              "minecraft:mangrove_swamp",
+                              "mythica:mangrove_swamp"
                             ]
                           },
                           "then_run": {
@@ -1703,7 +1719,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:mushroom_fields"
+                              "minecraft:mushroom_fields",
+                              "mythica:mushroom_fields"
                             ]
                           },
                           "then_run": {
@@ -1816,7 +1833,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:frozen_peaks"
+                              "minecraft:frozen_peaks",
+                              "mythica:frozen_peaks"
                             ]
                           },
                           "then_run": {
@@ -1887,7 +1905,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:snowy_slopes"
+                              "minecraft:snowy_slopes",
+                              "mythica:snowy_slopes"
                             ]
                           },
                           "then_run": {
@@ -1952,7 +1971,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:jagged_peaks"
+                              "minecraft:jagged_peaks",
+                              "mythica:jagged_peaks"
                             ]
                           },
                           "then_run": {
@@ -1967,7 +1987,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:grove"
+                              "minecraft:grove",
+                              "mythica:grove"
                             ]
                           },
                           "then_run": {
@@ -2014,7 +2035,8 @@
                               "if_true": {
                                 "type": "minecraft:biome",
                                 "biome_is": [
-                                  "minecraft:stony_peaks"
+                                  "minecraft:stony_peaks",
+                                  "mythica:stony_peaks"
                                 ]
                               },
                               "then_run": {
@@ -2106,7 +2128,8 @@
                               "if_true": {
                                 "type": "minecraft:biome",
                                 "biome_is": [
-                                  "minecraft:windswept_hills"
+                                  "minecraft:windswept_hills",
+                                  "mythica:windswept_hills"
                                 ]
                               },
                               "then_run": {
@@ -2171,7 +2194,8 @@
                               "if_true": {
                                 "type": "minecraft:biome",
                                 "biome_is": [
-                                  "minecraft:desert"
+                                  "minecraft:desert",
+                                  "mythica:desert"
                                 ]
                               },
                               "then_run": {
@@ -2225,7 +2249,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:windswept_savanna"
+                              "minecraft:windswept_savanna",
+                              "mythica:windswept_savanna"
                             ]
                           },
                           "then_run": {
@@ -2249,7 +2274,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:windswept_gravelly_hills"
+                              "minecraft:windswept_gravelly_hills",
+                              "mythica:windswept_gravelly_hills"
                             ]
                           },
                           "then_run": {
@@ -2356,7 +2382,8 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "minecraft:mangrove_swamp"
+                              "minecraft:mangrove_swamp",
+                              "mythica:mangrove_swamp"
                             ]
                           },
                           "then_run": {
@@ -2410,7 +2437,8 @@
                     "if_true": {
                       "type": "minecraft:biome",
                       "biome_is": [
-                        "minecraft:desert"
+                        "minecraft:desert",
+                        "mythica:desert"
                       ]
                     },
                     "then_run": {

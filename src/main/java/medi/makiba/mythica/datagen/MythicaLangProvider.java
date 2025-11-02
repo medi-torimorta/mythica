@@ -69,10 +69,23 @@ public class MythicaLangProvider extends LanguageProvider {
         this.addBiome("snowy_beach", "雪の砂浜");
         this.addBiome("stony_shore", "石だらけの海岸");
         this.addBiome("warm_ocean", "暖かい海");
+        this.addBiome("lush_caves", "繁茂した洞窟");
+        this.addBiome("dripstone_caves", "鍾乳洞");
+        this.addBiome("badlands", "荒野");
+        this.addBiome("birch_forest", "シラカバの森");
+        this.addBiome("dark_forest", "暗い森");
 
         this.addTag("is_mythica", "ミシカのバイオーム");
         this.addTag("is_beach", "ミシカの砂浜");
         this.addTag("is_ocean", "ミシカの海");
         this.addTag("is_river", "ミシカの河川");
+        this.addTag("is_badlands", "ミシカの荒野");
+        this.addTag("is_forest", "ミシカの森");
+        this.addTag("is_deep_ocean", "ミシカの深海");
+        this.addTag("is_hills", "ミシカの丘陵");
+        this.addTag("is_jungle", "ミシカのジャングル");
+        this.addTag("is_mountain", "ミシカの山岳");
+        this.addTag("is_savanna", "ミシカのサバンナ");
+        this.addTag("is_taiga", "ミシカのタイガ");
     }
 }

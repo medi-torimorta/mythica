@@ -12,13 +12,13 @@ Biomes added by Terrablender are copied to Mythica by default, but can be set to
 
 ## Overview
 This mod adds a new dimension, "Mythica" to the game.  
-The Mythica Dimension is a copy of the Overworld, and is intended for use in ModPacks.  
+The Mythica Dimension is a copy of the Overworld with a different seed(configurable), and is intended for use in ModPacks.  
 This Mod adds 1 item, the Mythic powder.  
 By default, right-clicking inside a portal frame made of reinforced deepslate, like those generated in Ancient Cities will spawn a portal to the Mythica Dimension.  
-The Mythic powder is unobtainable by default.  
+The Mythic powder has no built-in recipe, please use the command or add a recipe yourself.  
 
 ## Configuration
-It is recommended to add a recipe or a loot table to obtain the Mythic powder via Datapacks.  
+It is recommended to add a recipe or a loot table to obtain the Mythic powder using Datapacks.  
 The tag `#mythica:portal_frame_blocks` defines the blocks usable for portal frames,  
 and `#mythica:portal_replaceable` the blocks that can be replaced when a portal is generated inside the frame.  
 Check the common config to set the blocks used when an exit portal is generated.  
@@ -33,10 +33,11 @@ The Mythica Portal works with Create trains, allowing the rails to connect throu
 Allows for copying/transferring TerraBlender-added biomes from the Overworld to Mythica.  
 
 ## Bonus
-The mod includes unused ocean/river/beach/cave biome variants.  
-These are exact copies of their vanilla counterparts, and intended to be used for replacing them by datapacks.  
+The mod includes a datapack which generates mythica-namespaced biomes in place of vanilla ones.
+Use the command `/datapack enable "mod/mythica:use_mythica_biomes"` and re-start the world to apply.  
 Doing so will give you more control over what content are added to mythica/overworld separately.  
-see `data/mythica/worldgen/biome` for content.
+Alternatively, you can cherry-pick some biomes to replace the overworld variants using your own datapack.
+see `data/mythica/worldgen/biome` for available biomes.
 
 ## Credits
 Portal code adapted from [quek04/undergarden](https://github.com/quek04/undergarden/)  

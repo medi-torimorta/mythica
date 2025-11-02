@@ -1,0 +1,10 @@
+{
+  "values": [
+    "mythica:desert",
+    "mythica:warm_ocean",
+    "#mythica:is_jungle",
+    "#mythica:is_savanna",
+    "#mythica:is_badlands",
+    "mythica:mangrove_swamp"
+  ]
+}

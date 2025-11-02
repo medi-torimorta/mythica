@@ -1,0 +1,11 @@
+{
+  "values": [
+    "mythica:desert",
+    "mythica:plains",
+    "mythica:savanna",
+    "mythica:snowy_plains",
+    "mythica:taiga",
+    "#mythica:is_mountain",
+    "mythica:grove"
+  ]
+}

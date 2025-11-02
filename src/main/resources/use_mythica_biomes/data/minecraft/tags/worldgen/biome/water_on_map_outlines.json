@@ -1,0 +1,8 @@
+{
+  "values": [
+    "#mythica:is_ocean",
+    "#mythica:is_river",
+    "mythica:swamp",
+    "mythica:mangrove_swamp"
+  ]
+}

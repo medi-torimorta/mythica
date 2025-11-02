@@ -1,0 +1,26 @@
+{
+  "values": [
+    "#mythica:is_ocean",
+    "#mythica:is_river",
+    "#mythica:is_beach",
+    "#mythica:is_mountain",
+    "#mythica:is_hill",
+    "#mythica:is_taiga",
+    "#mythica:is_jungle",
+    "#mythica:is_forest",
+    "mythica:stony_shore",
+    "mythica:mushroom_fields",
+    "mythica:ice_spikes",
+    "mythica:windswept_savanna",
+    "mythica:desert",
+    "mythica:savanna",
+    "mythica:snowy_plains",
+    "mythica:plains",
+    "mythica:sunflower_plains",
+    "mythica:swamp",
+    "mythica:mangrove_swamp",
+    "mythica:savanna_plateau",
+    "mythica:dripstone_caves",
+    "mythica:lush_caves"
+  ]
+}
