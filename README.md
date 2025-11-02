@@ -37,7 +37,7 @@ The mod includes a datapack which generates mythica-namespaced biomes in place o
 Use the command `/datapack enable "mod/mythica:use_mythica_biomes"` and re-start the world to apply.  
 Doing so will give you more control over what content are added to mythica/overworld separately.  
 The datapack also adds the mythica biomes to some vanilla biome tags, but not to those enabling ruined portal and stronghold generation.  
-(this was done considering nether/end return portals will not take you to mythica, but rather the overworld. Feel free to add the tags yourself).  
+(this was done considering nether/end return portals not taking you back to mythica, but rather the overworld. Feel free to add the tags yourself).  
 
 Alternatively, you can cherry-pick some biomes to replace the overworld variants using your own datapack.  
 see `data/mythica/worldgen/biome` for available biomes.
