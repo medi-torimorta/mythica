@@ -3,6 +3,7 @@ package medi.makiba.mythica;
 import java.util.List;
 
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
@@ -18,6 +19,7 @@ public class MythicaConfig {
     public static final ModConfigSpec.ConfigValue<Integer> VANILLA_REGION_WEIGHT;
     public static final ModConfigSpec.ConfigValue<ModdedBiomeCopyModes> MODDED_BIOME_COPY_MODE;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> MOD_BLACKLIST;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> BIOME_BLACKLIST;
 
     public static final ModConfigSpec.ConfigValue<SeedModes> SEED_MODE;
     public static final ModConfigSpec.ConfigValue<Long> SEED_VALUE;
@@ -69,12 +71,19 @@ public class MythicaConfig {
             .defineInRange("Vanilla Region Weight", 10, 1, Integer.MAX_VALUE);
         MOD_BLACKLIST = BUILDER
             .comment("""
-                A list of mod ids to blacklist from having their biomes copied to mythica
+                A list of mod ids to blacklist from having their biome regions copied to mythica
                 Example: ["modid1", "modid2"]
                 if a region is registered under a namespace other than the modid, that should be used instead""")
             .translation("config.mythica.mod_blacklist")
             .gameRestart()
-            .defineListAllowEmpty("Mod Blacklist", List.of(), () -> "", o -> o instanceof String);
+            .defineListAllowEmpty("Region Blacklist", List.of(), () -> "", o -> o instanceof String);
+        BIOME_BLACKLIST = BUILDER
+            .comment("""
+                A list of biome resource locations to blacklist from being copied to mythica
+                Example: ["modid:biome_name1", "modid:biome_name2"]""")
+            .translation("config.mythica.biome_blacklist")
+            .worldRestart()
+            .defineListAllowEmpty("Biome Blacklist", List.of(), () -> "", o -> o instanceof String);
         BUILDER.pop();
         SPEC = BUILDER.build();
 

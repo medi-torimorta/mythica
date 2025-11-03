@@ -19,6 +19,7 @@
   "biome.mythica.stony_shore": "石だらけの海岸",
   "biome.mythica.warm_ocean": "暖かい海",
   "block.mythica.mythica_portal": "ミシカポータル",
+  "config.mythica.biome_blacklist": "バイオームブラックリスト",
   "config.mythica.mod_blacklist": "バイオームMODブラックリスト",
   "config.mythica.modded_biome_copy_mode": "MODバイオームのコピーモード",
   "config.mythica.mythica_region_size": "各リージョンの大きさ",

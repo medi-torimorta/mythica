@@ -63,6 +63,7 @@
   "config.mythica.mythica_region_size": "Mythica Region Size",
   "config.mythica.vanilla_region_weight": "Vanilla Region Weight",
   "config.mythica.mod_blacklist": "Biome Mod Blacklist",
+  "config.mythica.biome_blacklist": "Biome Blacklist",
   "config.mythica.modded_biome_copy_mode": "Modded Biome Copy Mode",
   "item.mythica.mythic_dust": "Mythic Dust",
   "mythica.configuration.title": "Configs",

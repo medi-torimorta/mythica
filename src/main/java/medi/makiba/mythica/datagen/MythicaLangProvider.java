@@ -53,7 +53,8 @@ public class MythicaLangProvider extends LanguageProvider {
         this.addConfig("modded_biome_copy_mode", "MODバイオームのコピーモード");
         this.addConfig("mythica_region_size", "各リージョンの大きさ");
         this.addConfig("vanilla_region_weight", "バニラリージョンのウェイト");
-        this.addConfig("mod_blacklist", "バイオームMODブラックリスト");
+        this.addConfig("mod_blacklist", "MODブラックリスト");
+        this.addConfig("biome_blacklist", "バイオームブラックリスト");
 
         this.addBiome("beach", "砂浜");
         this.addBiome("cold_ocean", "冷たい海");

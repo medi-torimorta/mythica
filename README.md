@@ -12,7 +12,7 @@ Biomes added by Terrablender are copied to Mythica by default, but can be set to
 
 ## Overview
 This mod adds a new dimension, "Mythica" to the game.  
-The Mythica Dimension is a copy of the Overworld with a different seed(configurable), and is intended for use in ModPacks.  
+The Mythica Dimension similar to the Overworld with a different seed(configurable).  
 This Mod adds 1 item, the Mythic powder.  
 By default, right-clicking inside a portal frame made of reinforced deepslate, like those generated in Ancient Cities will spawn a portal to the Mythica Dimension.  
 The Mythic powder has no built-in recipe, please use the command or add a recipe yourself.  
@@ -23,7 +23,7 @@ The tag `#mythica:portal_frame_blocks` defines the blocks usable for portal fram
 and `#mythica:portal_replaceable` the blocks that can be replaced when a portal is generated inside the frame.  
 Check the common config to set the blocks used when an exit portal is generated.  
 Terrablender-added overworld biomes can be set to copied to Mythica, ignored, or added to mythica and removed from the overworld.  
-Copied biomes can be blacklisted in a per-mod basis.  
+Regions can be blacklisted from copying by their namespaces, and biomes by their names.  
 The world seed used in mythica dimension can be configured in the server config file.  
 
 ## Integration
@@ -38,6 +38,8 @@ Use the command `/datapack enable "mod/mythica:use_mythica_biomes"` and re-start
 Doing so will give you more control over what content are added to mythica/overworld separately.  
 The datapack also adds the mythica biomes to some vanilla biome tags, but not to those enabling ruined portal and stronghold generation.  
 (this was done considering nether/end return portals not taking you back to mythica, but rather the overworld. Feel free to add the tags yourself).  
+Do note that some mods adds duplicates of vanilla biomes to the overworld, and those may be copied over to mythica. Blacklist the mod/biome to prevent this from happening.  
+Typical examples are: `minecraft:river`, `minecraft:frozen_river` and `minecraft:stony_shore`.
 
 Alternatively, you can cherry-pick some biomes to replace the overworld variants using your own datapack.  
 see `data/mythica/worldgen/biome` for available biomes.
