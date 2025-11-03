@@ -12,7 +12,7 @@ Biomes added by Terrablender are copied to Mythica by default, but can be set to
 
 ## Overview
 This mod adds a new dimension, "Mythica" to the game.  
-The Mythica Dimension similar to the Overworld with a different seed(configurable).  
+The Mythica Dimension is basically an another Overworld with a different seed(configurable).  
 This Mod adds 1 item, the Mythic powder.  
 By default, right-clicking inside a portal frame made of reinforced deepslate, like those generated in Ancient Cities will spawn a portal to the Mythica Dimension.  
 The Mythic powder has no built-in recipe, please use the command or add a recipe yourself.  
