@@ -12,6 +12,9 @@ import net.minecraft.world.level.LevelAccessor;
 import java.util.Optional;
 import java.util.function.Predicate;
 
+import medi.makiba.mythica.Mythica;
+import medi.makiba.mythica.MythicaConfig;
+import medi.makiba.mythica.block.portal.MythicaPortalForcer;
 import medi.makiba.mythica.block.portal.MythicaPortalShape;
 import medi.makiba.mythica.registry.MythicaSoundEvents;
 import medi.makiba.mythica.worldgen.dimension.MythicaDimensions;
@@ -20,19 +23,22 @@ import medi.makiba.mythica.worldgen.dimension.MythicaDimensions;
 public class MythicDust extends Item {
     public MythicDust() {
 		super(new Properties()
-			.stacksTo(1)
+			.stacksTo(64)
 			.rarity(Rarity.RARE)
 		);
 	}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
-		if (context.getLevel().dimension() == Level.OVERWORLD || context.getLevel().dimension() == MythicaDimensions.MYTHICA_DIM) {
+		if (context.getLevel().dimension() == MythicaPortalForcer.ENTRANCE_DIM || context.getLevel().dimension() == MythicaDimensions.MYTHICA_DIM) {
 			BlockPos framePos = context.getClickedPos().relative(context.getClickedFace());
 			Optional<MythicaPortalShape> optional = findPortalShape(context.getLevel(), framePos, shape -> shape.isValid() && shape.getPortalBlocks() == 0, Direction.Axis.X);
 			if (optional.isPresent()) {
 				optional.get().createPortalBlocks();
 				context.getLevel().playSound(context.getPlayer(), context.getClickedPos(), MythicaSoundEvents.MYTHICA_PORTAL_ACTIVATE.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
+				if(MythicaConfig.CONSUME_DUST_ON_USE.get()) {
+					context.getItemInHand().shrink(1);
+				}
 				return InteractionResult.sidedSuccess(context.getLevel().isClientSide());
 			}
 		}

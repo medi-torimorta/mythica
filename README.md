@@ -24,6 +24,7 @@ and `#mythica:portal_replaceable` the blocks that can be replaced when a portal 
 Check the common config to set the blocks used when an exit portal is generated.  
 Terrablender-added overworld biomes can be set to copied to Mythica, ignored, or added to mythica and removed from the overworld.  
 Regions can be blacklisted from copying by their namespaces, and biomes by their names.  
+The dimension which mythica portals can be created in can be also configured, defaulting to the Overworld.
 The world seed used in mythica dimension can be configured in the server config file.  
 
 ## Integration

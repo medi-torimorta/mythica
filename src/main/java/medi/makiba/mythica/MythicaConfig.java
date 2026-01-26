@@ -3,7 +3,7 @@ package medi.makiba.mythica;
 import java.util.List;
 
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
@@ -20,6 +20,8 @@ public class MythicaConfig {
     public static final ModConfigSpec.ConfigValue<ModdedBiomeCopyModes> MODDED_BIOME_COPY_MODE;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> MOD_BLACKLIST;
     public static final ModConfigSpec.ConfigValue<List<? extends String>> BIOME_BLACKLIST;
+    public static final ModConfigSpec.ConfigValue<Boolean> CONSUME_DUST_ON_USE;
+    public static final ModConfigSpec.ConfigValue<String> MYTHICA_PORTAL_DIMENSION;
 
     public static final ModConfigSpec.ConfigValue<SeedModes> SEED_MODE;
     public static final ModConfigSpec.ConfigValue<Long> SEED_VALUE;
@@ -84,6 +86,24 @@ public class MythicaConfig {
             .translation("config.mythica.biome_blacklist")
             .worldRestart()
             .defineListAllowEmpty("Biome Blacklist", List.of(), () -> "", o -> o instanceof String);
+        
+        CONSUME_DUST_ON_USE = BUILDER
+            .comment("""
+                If true, mythic dust will be consumed when used to create a mythica portal
+                If false, mythic dust will not be consumed on use""")
+            .translation("config.mythica.consume_dust_on_use")
+            .gameRestart()
+            .define("Consume Dust On Use", true);
+        
+        MYTHICA_PORTAL_DIMENSION = BUILDER
+        .comment("""
+            The dimension resource location that mythica portals can connect with.
+            Mythica portals can only be created in Mythica and the specified dimension.
+            Default is minecraft:overworld""")
+        .translation("config.mythica.mythica_portal_dimension")
+        .gameRestart()
+        .define("Mythica Portal Dimension", "minecraft:overworld");
+        
         BUILDER.pop();
         SPEC = BUILDER.build();
 
@@ -105,6 +125,4 @@ public class MythicaConfig {
 
         SERVER_SPEC = SERVER_BUILDER.build();
     }
-
-    
 }

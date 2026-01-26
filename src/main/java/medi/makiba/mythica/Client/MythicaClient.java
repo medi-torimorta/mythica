@@ -17,6 +17,6 @@ public class MythicaClient {
     }
 
     public static void playPortalSound() {
-		Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forLocalAmbience(MythicaSoundEvents.MYTHICA_PORTAL_TRAVEL.get(), 1.0F, 1.0F));
+		Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forLocalAmbience(MythicaSoundEvents.MYTHICA_PORTAL_TRAVEL.get(), 0.7F, 1.0F));
 	}
 }

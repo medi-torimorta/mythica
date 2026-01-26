@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import com.mojang.logging.LogUtils;
 
+import medi.makiba.mythica.MythicaConfig;
 import medi.makiba.mythica.registry.MythicaParticleTypes;
 import medi.makiba.mythica.registry.MythicaSoundEvents;
 import medi.makiba.mythica.worldgen.dimension.MythicaDimensions;
@@ -111,7 +112,8 @@ public class MythicaPortalBlock extends Block implements Portal {
     @Nullable
     @Override
     public DimensionTransition getPortalDestination(ServerLevel level, Entity entity, BlockPos pos) {
-        ResourceKey<Level> resourcekey = level.dimension() == MythicaDimensions.MYTHICA_DIM ? Level.OVERWORLD : MythicaDimensions.MYTHICA_DIM;
+        
+        ResourceKey<Level> resourcekey = level.dimension() == MythicaDimensions.MYTHICA_DIM ? MythicaPortalForcer.ENTRANCE_DIM : MythicaDimensions.MYTHICA_DIM;
         ServerLevel serverlevel = level.getServer().getLevel(resourcekey);
         if (serverlevel == null) {
             return null;
@@ -119,15 +121,15 @@ public class MythicaPortalBlock extends Block implements Portal {
             WorldBorder worldborder = serverlevel.getWorldBorder();
             double d0 = DimensionType.getTeleportationScale(level.dimensionType(), serverlevel.dimensionType());
             BlockPos blockpos = worldborder.clampToBounds(entity.getX() * d0, entity.getY(), entity.getZ() * d0);
-            return this.getExitPortal(serverlevel, entity, pos, blockpos, worldborder);
+            return this.getExitPortal(serverlevel, d0 / 1, entity, pos, blockpos, worldborder);
         }
     }
 
     @Nullable
     private DimensionTransition getExitPortal(
-        ServerLevel level, Entity entity, BlockPos pos, BlockPos exitPos, WorldBorder worldBorder
+        ServerLevel level, double scale, Entity entity, BlockPos pos, BlockPos exitPos, WorldBorder worldBorder
     ) {
-        Optional<BlockPos> optional = MythicaPortalForcer.findClosestPortalPosition(level, exitPos, worldBorder);
+        Optional<BlockPos> optional = MythicaPortalForcer.findClosestPortalPosition(level, scale, exitPos, worldBorder);
         BlockUtil.FoundRectangle blockutil$foundrectangle;
         DimensionTransition.PostDimensionTransition dimensiontransition$postdimensiontransition;
         if (optional.isPresent()) {
@@ -218,7 +220,7 @@ public class MythicaPortalBlock extends Block implements Portal {
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (random.nextInt(100) == 0) {
-			level.playLocalSound((double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, MythicaSoundEvents.MYTHICA_PORTAL_AMBIENT.get(), SoundSource.BLOCKS, 0.5F, random.nextFloat() * 0.4F + 0.8F, false);
+			level.playLocalSound((double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, MythicaSoundEvents.MYTHICA_PORTAL_AMBIENT.get(), SoundSource.BLOCKS, 0.3F, random.nextFloat() * 0.4F + 0.8F, false);
 		}
 
         for (int i = 0; i < 4; i++) {

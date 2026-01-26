@@ -3,6 +3,7 @@ package medi.makiba.mythica.compat.create;
 import com.simibubi.create.api.contraption.train.PortalTrackProvider;
 import com.simibubi.create.content.trains.track.AllPortalTracks;
 
+import medi.makiba.mythica.block.portal.MythicaPortalForcer;
 import medi.makiba.mythica.registry.MythicaBlocks;
 import medi.makiba.mythica.worldgen.dimension.MythicaDimensions;
 import net.createmod.catnip.math.BlockFace;
@@ -33,7 +34,7 @@ public class CreateCompat {
             }
             Portal portal = (Portal) portalBlock;
 
-            return AllPortalTracks.fromPortal(level, face, Level.OVERWORLD, MythicaDimensions.MYTHICA_DIM, portal);
+            return AllPortalTracks.fromPortal(level, face, MythicaPortalForcer.ENTRANCE_DIM, MythicaDimensions.MYTHICA_DIM, portal);
         }
     }
 }

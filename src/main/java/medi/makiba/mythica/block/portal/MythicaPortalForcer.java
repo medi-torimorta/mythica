@@ -5,6 +5,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -12,6 +14,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.village.poi.PoiManager;
 import net.minecraft.world.entity.ai.village.poi.PoiRecord;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.NetherPortalBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -24,6 +27,7 @@ import java.util.Comparator;
 import java.util.Objects;
 import java.util.Optional;
 
+import medi.makiba.mythica.Mythica;
 import medi.makiba.mythica.MythicaConfig;
 import medi.makiba.mythica.network.MythicaPortalSoundPacket;
 import medi.makiba.mythica.registry.MythicaBlocks;
@@ -41,10 +45,11 @@ public class MythicaPortalForcer {
 		}
 	}
 
-	public static Optional<BlockPos> findClosestPortalPosition(ServerLevel level, BlockPos exitPos, WorldBorder worldBorder) {
+	public static Optional<BlockPos> findClosestPortalPosition(ServerLevel level, double scale, BlockPos exitPos, WorldBorder worldBorder) {
 		PoiManager poimanager = level.getPoiManager();
-		poimanager.ensureLoadedAndValid(level, exitPos, 16);
-		return poimanager.getInSquare(holder -> holder.is(MythicaPointOfInterests.MYTHICA_PORTAL), exitPos, 16, PoiManager.Occupancy.ANY)
+		int range = Math.min(Math.max((int)(16 * scale), 16), 256);
+		poimanager.ensureLoadedAndValid(level, exitPos, range);
+		return poimanager.getInSquare(holder -> holder.is(MythicaPointOfInterests.MYTHICA_PORTAL), exitPos, range, PoiManager.Occupancy.ANY)
 			.map(PoiRecord::getPos)
 			.filter(worldBorder::isWithinBounds)
 			.filter(pos -> level.getBlockState(pos).hasProperty(BlockStateProperties.HORIZONTAL_AXIS))
@@ -61,16 +66,16 @@ public class MythicaPortalForcer {
 		int maxHeight = level.getMaxBuildHeight() - 1;
 		BlockPos.MutableBlockPos framePos = pos.mutable();
 
-		for (BlockPos.MutableBlockPos checkPos : BlockPos.spiralAround(pos, 16, Direction.EAST, Direction.SOUTH)) {
+		for (BlockPos.MutableBlockPos checkPos : BlockPos.spiralAround(pos, 32, Direction.EAST, Direction.SOUTH)) {
 			if (worldBorder.isWithinBounds(checkPos) && worldBorder.isWithinBounds(checkPos.move(direction, 1))) {
 				checkPos.move(direction.getOpposite(), 1);
 
-				for (int checkY = maxHeight; checkY >= 0; checkY--) {
+				for (int checkY = maxHeight; checkY >= level.getMinBuildHeight(); checkY--) {
 					checkPos.setY(checkY);
 					if (canPortalReplaceBlock(level, checkPos)) {
 						int currentY = checkY;
 
-						while (checkY > 0 && canPortalReplaceBlock(level, checkPos.move(Direction.DOWN))) {
+						while (checkY > level.getMinBuildHeight() && canPortalReplaceBlock(level, checkPos.move(Direction.DOWN))) {
 							checkY--;
 						}
 
@@ -166,5 +171,16 @@ public class MythicaPortalForcer {
 			}
 		}
 		return true;
+	}
+
+	public static ResourceKey<Level> ENTRANCE_DIM;
+	static{
+		ResourceLocation dimResLoc = ResourceLocation.tryParse(MythicaConfig.MYTHICA_PORTAL_DIMENSION.get());
+		if(dimResLoc != null){
+			ENTRANCE_DIM = ResourceKey.create(Registries.DIMENSION, dimResLoc);
+		}else{
+			ENTRANCE_DIM = Level.OVERWORLD;
+			Mythica.LOGGER.warn("invalid dimension id for Mythica Portal Dimension in config, defaulting to overworld");
+		}
 	}
 }
