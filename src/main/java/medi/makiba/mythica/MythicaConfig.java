@@ -47,6 +47,23 @@ public class MythicaConfig {
                 If value entered here is not a valid block it will default to generating minecraft:reinforced_deepslate""")
             .translation("config.mythica.return_portal_frame_block_id")
             .define("Return Portal Frame Block ID", BuiltInRegistries.BLOCK.getKey(Blocks.REINFORCED_DEEPSLATE).toString());
+        CONSUME_DUST_ON_USE = BUILDER
+            .comment("""
+                If true, mythic dust will be consumed when used to create a mythica portal
+                If false, mythic dust will not be consumed on use""")
+            .translation("config.mythica.consume_dust_on_use")
+            .gameRestart()
+            .define("Consume Dust On Use", true);
+        
+        MYTHICA_PORTAL_DIMENSION = BUILDER
+        .comment("""
+            The dimension resource location that mythica portals can connect with.
+            Mythica portals can only be created in Mythica and the specified dimension.
+            Default is minecraft:overworld""")
+        .translation("config.mythica.mythica_portal_dimension")
+        .gameRestart()
+        .define("Mythica Portal Dimension", "minecraft:overworld");
+
         BUILDER.pop();
         BUILDER.push("terrablender_biome_settings");
         MODDED_BIOME_COPY_MODE = BUILDER
@@ -86,23 +103,6 @@ public class MythicaConfig {
             .translation("config.mythica.biome_blacklist")
             .worldRestart()
             .defineListAllowEmpty("Biome Blacklist", List.of(), () -> "", o -> o instanceof String);
-        
-        CONSUME_DUST_ON_USE = BUILDER
-            .comment("""
-                If true, mythic dust will be consumed when used to create a mythica portal
-                If false, mythic dust will not be consumed on use""")
-            .translation("config.mythica.consume_dust_on_use")
-            .gameRestart()
-            .define("Consume Dust On Use", true);
-        
-        MYTHICA_PORTAL_DIMENSION = BUILDER
-        .comment("""
-            The dimension resource location that mythica portals can connect with.
-            Mythica portals can only be created in Mythica and the specified dimension.
-            Default is minecraft:overworld""")
-        .translation("config.mythica.mythica_portal_dimension")
-        .gameRestart()
-        .define("Mythica Portal Dimension", "minecraft:overworld");
         
         BUILDER.pop();
         SPEC = BUILDER.build();
