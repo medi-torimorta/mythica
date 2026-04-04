@@ -16,6 +16,16 @@ repositories {
     maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
     maven { url = "https://maven.ithundxr.dev/snapshots" } // Registrate
     maven { url = 'https://maven.minecraftforge.net/' } //Terrablender
+    exclusiveContent {
+        forRepository {
+            maven {
+                url "https://cursemaven.com"
+            }
+        }
+        filter {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 base {
@@ -88,6 +98,8 @@ dependencies {
     implementation("com.tterrag.registrate:Registrate:${registrate_version}")
     compileOnly("com.github.glitchfiend:TerraBlender-neoforge:${terrablender_version}")
 
+    implementation "curse.maven:biomes-o-plenty-220318:7251965" //biomes o plenty for testing
+    implementation "curse.maven:glitchcore-955399:5660740"
 }
 
 jar {

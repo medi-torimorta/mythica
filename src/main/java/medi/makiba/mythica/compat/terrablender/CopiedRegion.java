@@ -16,8 +16,12 @@ import terrablender.api.Region;
 public class CopiedRegion extends Region {
     Region originalRegion;
 
+    public static ResourceLocation getCopiedRegionName(ResourceLocation location) {
+        return ResourceLocation.fromNamespaceAndPath(Mythica.MODID, location.getNamespace() + "_" + location.getPath());
+    }
+
     public CopiedRegion(Region originalRegion, ResourceLocation location, int weight) {
-        super(ResourceLocation.fromNamespaceAndPath(Mythica.MODID, location.getNamespace() + "_" + location.getPath()), MythicaRegionType.MYTHICA, weight);
+        super(getCopiedRegionName(location), MythicaRegionType.MYTHICA, weight);
         this.originalRegion = originalRegion;
     }
     

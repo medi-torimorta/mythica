@@ -35,6 +35,10 @@ import medi.makiba.mythica.registry.MythicaPointOfInterests;
 
 public class MythicaPortalForcer {
 
+	private static final int MIN_PORTAL_SEARCH_RANGE = 16;
+	private static final int MAX_PORTAL_SEARCH_RANGE = 256;
+	private static final int PORTAL_CREATION_MARGIN = 1;
+
 	private static final BlockState FRAME = !BuiltInRegistries.BLOCK.containsKey(Objects.requireNonNull(ResourceLocation.tryParse(MythicaConfig.RETURN_PORTAL_FRAME_BLOCK_ID.get()))) ? Blocks.REINFORCED_DEEPSLATE.defaultBlockState() : BuiltInRegistries.BLOCK.get(ResourceLocation.tryParse(MythicaConfig.RETURN_PORTAL_FRAME_BLOCK_ID.get())).defaultBlockState();
 
 	public static final DimensionTransition.PostDimensionTransition PLAY_PORTAL_SOUND = MythicaPortalForcer::playPortalSound;
@@ -47,7 +51,7 @@ public class MythicaPortalForcer {
 
 	public static Optional<BlockPos> findClosestPortalPosition(ServerLevel level, double scale, BlockPos exitPos, WorldBorder worldBorder) {
 		PoiManager poimanager = level.getPoiManager();
-		int range = Math.min(Math.max((int)(16 * scale), 16), 256);
+		int range = getPortalSearchRange(scale);
 		poimanager.ensureLoadedAndValid(level, exitPos, range);
 		return poimanager.getInSquare(holder -> holder.is(MythicaPointOfInterests.MYTHICA_PORTAL), exitPos, range, PoiManager.Occupancy.ANY)
 			.map(PoiRecord::getPos)
@@ -56,7 +60,7 @@ public class MythicaPortalForcer {
 			.min(Comparator.<BlockPos>comparingDouble(pos -> pos.distSqr(exitPos)).thenComparingInt(Vec3i::getY));
 	}
 
-	public static Optional<BlockUtil.FoundRectangle> createPortal(ServerLevel level, BlockPos pos, Direction.Axis axis) {
+	public static Optional<BlockUtil.FoundRectangle> createPortal(ServerLevel level, BlockPos pos, Direction.Axis axis, double scale) {
 		Direction direction = Direction.get(Direction.AxisDirection.POSITIVE, axis);
 		double d0 = -1.0;
 		BlockPos portalPos = null;
@@ -64,9 +68,11 @@ public class MythicaPortalForcer {
 		BlockPos backupPortalPos = null;
 		WorldBorder worldBorder = level.getWorldBorder();
 		int maxHeight = level.getMaxBuildHeight() - 1;
+		int searchRange = getPortalSearchRange(scale);
+		int creationRange = getPortalCreationRange(searchRange);
 		BlockPos.MutableBlockPos framePos = pos.mutable();
 
-		for (BlockPos.MutableBlockPos checkPos : BlockPos.spiralAround(pos, 32, Direction.EAST, Direction.SOUTH)) {
+		for (BlockPos.MutableBlockPos checkPos : BlockPos.spiralAround(pos, creationRange, Direction.EAST, Direction.SOUTH)) {
 			if (worldBorder.isWithinBounds(checkPos) && worldBorder.isWithinBounds(checkPos.move(direction, 1))) {
 				checkPos.move(direction.getOpposite(), 1);
 
@@ -83,7 +89,7 @@ public class MythicaPortalForcer {
 							int portalGap = currentY - checkY;
 							if (portalGap <= 0 || portalGap >= 3) {
 								checkPos.setY(checkY);
-								if (canHostFrame(level, checkPos, framePos, direction, 0)) {
+								if (isPortalWithinSearchRange(pos, checkPos, direction, creationRange) && canHostFrame(level, checkPos, framePos, direction, 0)) {
 									double dist = pos.distSqr(checkPos);
 									if (canHostFrame(level, checkPos, framePos, direction, -1)
 										&& canHostFrame(level, checkPos, framePos, direction, 1)
@@ -110,8 +116,14 @@ public class MythicaPortalForcer {
 		}
 
 		if (d0 == -1.0) {
-			portalPos = new BlockPos(pos.getX() - direction.getStepX(), Mth.clamp(pos.getY(), 70, maxHeight - 9), pos.getZ() - direction.getStepZ()).immutable();
+			portalPos = clampPortalToSearchRange(
+				pos,
+				new BlockPos(pos.getX() - direction.getStepX(), Mth.clamp(pos.getY(), 70, maxHeight - 9), pos.getZ() - direction.getStepZ()),
+				direction,
+				creationRange
+			).immutable();
 			portalPos = worldBorder.clampToBounds(portalPos);
+			portalPos = clampPortalToSearchRange(pos, portalPos, direction, creationRange).immutable();
 			Direction direction1 = direction.getClockWise();
 
 			for (int i3 = -1; i3 < 2; i3++) {
@@ -148,6 +160,35 @@ public class MythicaPortalForcer {
 		return Optional.of(new BlockUtil.FoundRectangle(portalPos.immutable(), 2, 3));
 	}
 
+	private static int getPortalSearchRange(double scale) {
+		return Math.min(Math.max((int)(16 * scale), MIN_PORTAL_SEARCH_RANGE), MAX_PORTAL_SEARCH_RANGE);
+	}
+
+	private static int getPortalCreationRange(int searchRange) {
+		return Math.max(searchRange - PORTAL_CREATION_MARGIN, 1);
+	}
+
+	private static boolean isPortalWithinSearchRange(BlockPos originPos, BlockPos portalPos, Direction direction, int searchRange) {
+		for (int portalX = 0; portalX < 2; portalX++) {
+			int portalBlockX = portalPos.getX() + portalX * direction.getStepX();
+			int portalBlockZ = portalPos.getZ() + portalX * direction.getStepZ();
+			if (Math.abs(portalBlockX - originPos.getX()) > searchRange || Math.abs(portalBlockZ - originPos.getZ()) > searchRange) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private static BlockPos clampPortalToSearchRange(BlockPos originPos, BlockPos portalPos, Direction direction, int searchRange) {
+		int minX = originPos.getX() - searchRange - Math.min(direction.getStepX(), 0);
+		int maxX = originPos.getX() + searchRange - Math.max(direction.getStepX(), 0);
+		int minZ = originPos.getZ() - searchRange - Math.min(direction.getStepZ(), 0);
+		int maxZ = originPos.getZ() + searchRange - Math.max(direction.getStepZ(), 0);
+		int clampedX = Mth.clamp(portalPos.getX(), minX, maxX);
+		int clampedZ = Mth.clamp(portalPos.getZ(), minZ, maxZ);
+		return new BlockPos(clampedX, portalPos.getY(), clampedZ);
+	}
+
 	private static boolean canPortalReplaceBlock(ServerLevel level, BlockPos.MutableBlockPos pos) {
 		BlockState blockstate = level.getBlockState(pos);
 		return blockstate.canBeReplaced() && blockstate.getFluidState().isEmpty();
@@ -159,7 +200,7 @@ public class MythicaPortalForcer {
 		for (int i = -1; i < 3; i++) {
 			for (int j = -1; j < 4; j++) {
 				offsetPos.setWithOffset(
-					originalPos, directionClockWise.getStepX() * i + directionClockWise.getStepX() * pOffsetScale, j, directionClockWise.getStepZ() * i + directionClockWise.getStepZ() * pOffsetScale
+					originalPos, direction.getStepX() * i + directionClockWise.getStepX() * pOffsetScale, j, direction.getStepZ() * i + directionClockWise.getStepZ() * pOffsetScale
 				);
 				if (j < 0 && !level.getBlockState(offsetPos).isSolid()) {
 					return false;

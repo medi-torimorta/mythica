@@ -146,7 +146,7 @@ public class MythicaPortalBlock extends Block implements Portal {
             dimensiontransition$postdimensiontransition = MythicaPortalForcer.PLAY_PORTAL_SOUND.then(p_351967_ -> p_351967_.placePortalTicket(blockpos));
         } else {
             Direction.Axis direction$axis = entity.level().getBlockState(pos).getOptionalValue(AXIS).orElse(Direction.Axis.X);
-            Optional<BlockUtil.FoundRectangle> optional1 = MythicaPortalForcer.createPortal(level, exitPos, direction$axis);
+            Optional<BlockUtil.FoundRectangle> optional1 = MythicaPortalForcer.createPortal(level, exitPos, direction$axis, scale);
             if (optional1.isEmpty()) {
                 LOGGER.error("Unable to create a portal, likely target out of worldborder");
                 return null;

@@ -8,9 +8,9 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import medi.makiba.mythica.MythicaConfig;
 import medi.makiba.mythica.compat.terrablender.MythicaRuleCategory;
 import medi.makiba.mythica.compat.terrablender.MythicaSurfaceRuleData;
+import medi.makiba.mythica.compat.terrablender.MythicaTerrablenderSync;
 import terrablender.api.SurfaceRuleManager;
 import terrablender.api.SurfaceRuleManager.RuleCategory;
 
@@ -36,17 +36,11 @@ public class SurfaceRuleManagerMixin {
 
     @Inject(method = "addSurfaceRules", at = @At("TAIL"))
     private static void addSurfaceRulesToMythica(RuleCategory category, String namespace, SurfaceRules.RuleSource rules, CallbackInfo ci) {
-        if (category != RuleCategory.OVERWORLD || MythicaConfig.MOD_BLACKLIST.get().contains(namespace)) {
-            return;
-        }
-        (surfaceRules.get(MythicaRuleCategory.MYTHICA)).put(namespace, rules);
+        MythicaTerrablenderSync.observeSurfaceRulesAdded(category, namespace, rules);
    }
 
    @Inject(method = "removeSurfaceRules", at = @At("TAIL"))
     private static void removeSurfaceRulesToMythica(RuleCategory category, String namespace, CallbackInfo ci) {
-        if (category != RuleCategory.OVERWORLD || MythicaConfig.MOD_BLACKLIST.get().contains(namespace)) {
-            return;
-        }
-        (surfaceRules.get(MythicaRuleCategory.MYTHICA)).remove(namespace);
+        MythicaTerrablenderSync.observeSurfaceRulesRemoved(category, namespace);
    }
 }
