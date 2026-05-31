@@ -6,13 +6,11 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 
 import java.util.Optional;
 import java.util.function.Predicate;
 
-import medi.makiba.mythica.Mythica;
 import medi.makiba.mythica.MythicaConfig;
 import medi.makiba.mythica.block.portal.MythicaPortalForcer;
 import medi.makiba.mythica.block.portal.MythicaPortalShape;
